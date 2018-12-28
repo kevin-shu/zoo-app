@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" /> -->
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+
+  <style>
+    .table {
+      width: 100%;
+    }
+    .table td {
+      border-bottom: 1px solid #aaa;
+    }
+  </style>
+
+</head>
+<body>
+  <div data-role="page" id="index">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>綠綠動物園導覽 APP</h1>
+      
+    </div>
+
+    <div data-role="content" role="main">
+
+      <div id="map-wrapper" style="position:relative;" >
+        <img src="./img/map.png" style="width:100%;" />
+        <img id="pin" src="./img/location-pin.png" style="width:48px; height:48px; position:absolute; display:none;" />
+      </div>
+
+      <style>
+        ul.white-list > li > a {
+          background-color: white !important; 
+          color: #888 !important;
+        }
+      </style>
+      <div data-role="collapsible-set" data-theme="b" data-content-theme="b">
+        <div data-role="collapsible" data-collapsed-icon="flat-location" data-expanded-icon="flat-cross">
+          <h3 onclick="pinBird()">禽鳥館</h3>
+          <ul class="white-list" data-role="listview">
+            <li><a href="#yuanyang">鴛鴦</a></li>
+            <li><a href="#black-swan">黑天鵝</a></li>
+            <li><a href="#peacok">孔雀</a></li>
+          </ul>
+        </div>
+        <div data-role="collapsible" data-collapsed-icon="flat-location" data-expanded-icon="flat-cross">
+          <h3 onclick="pinCreep()">爬蟲館</h3>
+          <ul class="white-list" data-role="listview">
+            <li><a href="#green">綠鬣蜥</a></li>
+            <li><a href="#turtle">鱷龜</a></li>
+          </ul>
+        </div>
+        <div data-role="collapsible" data-collapsed-icon="flat-location" data-expanded-icon="flat-cross">
+          <h3 onclick="pinMonkey()">非洲館</h3>
+          <ul class="white-list" data-role="listview">
+            <li><a href="#hipo">河馬</a></li>
+          </ul>
+        </div>
+        <div data-role="collapsible" data-collapsed-icon="flat-location" data-expanded-icon="flat-cross">
+          <h3 onclick="pinAsia()">亞洲館</h3>
+          <ul class="white-list" data-role="listview">
+            <li><a href="#shanqiang">山羌</a></li>
+            <li><a href="#pongo">紅毛猩猩</a></li>
+            <li><a href="#bear">馬來熊</a></li>
+            <li><a href="#malai">馬來猴</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 馬來猴 -->
+  <div data-role="page" id="malai">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>馬來猴</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/malai.jpg" style="width:100%;" />
+      <p>馬來猴又稱食蟹獼猴，群體棲息於沿岸紅樹林、沼澤及河邊森林，日行性，以樹棲為主。種子、水果、樹業、昆蟲、青蛙及溪蟹都是喜好的食物。</p>
+      
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約16公斤</td></tr>
+          <tr><td>身長</td><td>約60公分</td></tr>
+          <tr><td>棲息地</td><td>山地</td></tr>
+          <tr><td>原產地</td><td>亞洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="馬來猴">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 鴛鴦 -->
+  <div data-role="page" id="yuanyang">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>鴛鴦</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/鴛鴦.jpg" style="width:100%;">
+      <p>鴛鴦，又名鸂鶒、中國官鴨、烏仁哈欽、五彩鴛鴦、匹鳥、鄧木鳥，是雁形目雁鴨科鴛鴦屬的一種水鳥。亦經常出現在中國古代文學作品和神話傳説中。其中鴛指雄鳥，鴦指雌鳥。</p>
+
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約4公斤</td></tr>
+          <tr><td>身長</td><td>約40公分</td></tr>
+          <tr><td>棲息地</td><td>湖泊</td></tr>
+          <tr><td>原產地</td><td>亞洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="鴛鴦">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 黑天鵝介紹 -->
+  <div data-role="page" id="black-swan">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>黑天鵝</h1>
+      
+    </div>
+
+    <div data-role="content" role="main">
+      <img src="./img/black-swan.jpg" style="width:100%;">
+      <p>黑天鵝（學名：Cygnus atratus）是一種主要在澳洲東南與西南區域繁殖的大型水鳥，曾經被單獨歸類成一個單型種：Chenopis。</p>
+      <p>黑天鵝可能獨自行動，也可能成群結隊（從幾百隻到幾千隻不等）。儘管大部分的身軀覆蓋著黑色的羽毛，但是一旦飛行起來，便可發現其實黑天鵝有著一排白色的發翔羽。它們有著明顯、亮紅色的喙部，雙足則是灰黑色的。</p>
+      <p>成年的黑天鵝身長大約在 1.1 到 1.4 公尺之間，平均重量 6 到 9 公斤重。在飛行時，翼展可達 1.6 到 2 公尺寬。頸部細長，在天鵝中算是最長的一種，通常彎成優雅地 S 型。</p>        
+      <p>雄鳥比雌鳥來得稍微大一些，喙也比較直且長；雛鳥有著灰棕色的羽毛。</p>         
+      <p>黑天鵝在飛行時或划水時偶發響亮如軍號的叫聲，不過也會發出低低的輕哼。在孵育或是築巢時如果受到驚擾，則會發出囀鳴聲。</p>       
+      <p>黑天鵝跟其他澳洲的鳥類外型迥異，不過在微光下飛行時可能會被錯認成鵲鵝。不過只要看清楚它們長長的頸子與緩慢的擊翼節拍，應該還是可以分辨得出來。</p>
+
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約8公斤</td></tr>
+          <tr><td>身長</td><td>約120公分</td></tr>
+          <tr><td>棲息地</td><td>湖泊</td></tr>
+          <tr><td>原產地</td><td>澳洲</td></tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+
+  <!-- 紅毛猩猩 -->
+  <div data-role="page" id="pongo">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>紅毛猩猩</h1>
+      
+    </div>
+
+    <div data-role="content" role="main">
+      <img src="./img/pongo.jpg" style="width:100%;">
+      <p>猩猩屬（學名：Pongo），也叫人猿、紅猩猩、紅毛猩猩，靈長目人科的一屬，與猴子最大不同的地方就是沒有尾巴，能用手或腳拿東西。
+        馬來語和印尼語叫做Orang utan，意思 「森林中的人」。與人類十分相近，與人類基因相似度達96.4％。
+        通常不用聲音溝通，通常有好幾個個體會在同一個區域活動，但彼此不干擾，平均壽命大概40年，平均身高大概171—180公分</p>
+    
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約70公斤</td></tr>
+          <tr><td>身長</td><td>約180公分</td></tr>
+          <tr><td>棲息地</td><td>叢林</td></tr>
+          <tr><td>原產地</td><td>亞洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="紅毛猩猩">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 綠鬣蜥 -->
+  <div data-role="page" id="green">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>綠鬣蜥</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/malaienbear.jpg" style="width:100%;">
+      <p>美洲鬣蜥（學名：Iguana iguana）又名綠鬣蜥，是一種生活在樹上的大型蜥蜴，頭尾全長可以超過一公尺，壽命可長達10年以上，以植物的葉、嫩芽、花、果實為食物，為日行性爬蟲類，每胎可產24-45顆卵。主要分布於中美洲的墨西哥至巴拉圭間、南美洲、加勒比海及佛羅里達等地。被列入《瀕危野生動植物種國際貿易公約》附錄二中。綠鬣蜥常被人作為寵物飼養，中國和部份美洲國家設有養殖場大量飼養綠鬣蜥以作售賣用途。因為人為的飼養及野放，在台灣已成為外來種，在屏東市及等鄰近鄉鎮已建有繁殖族群。</p>
+    
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約20公斤</td></tr>
+          <tr><td>身長</td><td>約100公分</td></tr>
+          <tr><td>棲息地</td><td>平原</td></tr>
+          <tr><td>原產地</td><td>美洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="綠鬣蜥">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 河馬 -->
+  <div data-role="page" id="hipo">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>綠綠動物園導覽 APP</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/malaienbear.jpg" style="width:100%;">
+      <p>河馬（學名：Hippopotamus amphibius）是生活於撒哈拉以南非洲的大型雜食性[3]半水生哺乳類動物，是生物分類法裡河馬科中的兩個延伸物種的其中一個（另一個是倭河馬）。河馬為第三大的現存陸生哺乳動物，僅次於象與犀牛；同時也是現存最重的偶蹄目。儘管身形外表類似豬，河馬親緣關係上其實更接近於鯨豚類。</p>>
+      <p>河馬著名的特徵包括筒狀無毛的身軀、長了長牙的大嘴以及粗短的四肢。成年雄性體重平均約 1,500公斤（3,310磅），成年雌性體重平均約 1,300公斤（2,870磅）。河馬看似笨重，但是能以 30 km/h（19 mph） 的速度進行衝刺。</p>
+      
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約1500公斤</td></tr>
+          <tr><td>身長</td><td>約240公分</td></tr>
+          <tr><td>棲息地</td><td>濕地</td></tr>
+          <tr><td>原產地</td><td>非洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="河馬">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 孔雀 -->
+  <div data-role="page" id="peacok">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>孔雀</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/peacock.jpg" style="width:100%;">
+      <p>孔雀，是一種鳥類，屬雞形目，雉科，又名越鳥、南客。孔雀有三種，綠孔雀和藍孔雀屬於該屬，而剛果孔雀單獨成屬。藍孔雀又名印度孔雀，雄鳥羽毛為寶藍色，富有金屬光澤，分布在印度和斯里蘭卡。綠孔雀又名爪哇孔雀，分布在東南亞和中國雲南省，此外，藍孔雀還有白孔雀和黑孔雀兩種變異種。</p>
+      
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約12公斤</td></tr>
+          <tr><td>身長</td><td>約100公分</td></tr>
+          <tr><td>棲息地</td><td>林地</td></tr>
+          <tr><td>原產地</td><td>亞洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="孔雀">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 馬來熊 -->
+  <div data-role="page" id="bear">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>馬來熊</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/malaienbear.jpg" style="width:100%;">
+      <p>馬來熊（學名：Helarctos malayanus），英文名為「Sun Bear」，藏語譯音為「耐力喀蘇」，是熊科馬來熊屬（Helarctos）的唯一一種生物，生活在東南亞的熱帶雨林中。</p>
+      
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約30公斤</td></tr>
+          <tr><td>身長</td><td>約80公分</td></tr>
+          <tr><td>棲息地</td><td>山地</td></tr>
+          <tr><td>原產地</td><td>亞洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="馬來熊">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 鱷龜 -->
+  <div data-role="page" id="turtle">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>鱷龜</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/turtle.jpg" style="width:100%;">
+      <p>大鱷龜屬，亦作真鱷龜屬，是世界最大的淡水龜之一。牠們是擬鱷龜的親屬，體型巨大少有天敵，攻擊性中上但咬合力極強。種小名是為紀念荷蘭動物學家康拉德·雅各·特明克。</p>
+      
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約80公斤</td></tr>
+          <tr><td>身長</td><td>約100公分</td></tr>
+          <tr><td>棲息地</td><td>濕地</td></tr>
+          <tr><td>原產地</td><td>非洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="鱷龜">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 山羌 -->
+  <div data-role="page" id="shanqiang">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>山羌</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <img src="./img/shanqiang.jpg" style="width:100%;">
+      <p>山羌，又稱羌仔、麂、麂子、黄麂。鹿科麂屬的草食性動物， 分布於華中、華南地區與臺灣。該動物屬於可食用野生動物，為台灣原住民的傳統獵物之一，面臨獵捕壓力。</p>
+      <table class="table">
+        <thead></thead>
+        <tbody>
+          <tr><td>體重</td><td>約40公斤</td></tr>
+          <tr><td>身長</td><td>約80公分</td></tr>
+          <tr><td>棲息地</td><td>山地</td></tr>
+          <tr><td>原產地</td><td>亞洲</td></tr>
+        </tbody>
+      </table>
+      <a href="#compareMenu" class="js-select-animal ui-btn ui-corner-all ui-shadow ui-btn-b" data-animal-name="山羌">與其他動物比較</a>
+    </div>
+  </div>
+
+  <!-- 比較選單 -->
+  <div data-role="page" id="compareMenu" data-add-back-btn="true" data-back-btn-text="Back">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>請選擇動物</h1>
+    </div>
+    <div data-role="content" role="main">
+      <button onclick="window.history.back();" class="ui-btn ui-btn-inline ui-btn-c ui-corner-all">回到上一頁</button>
+      <ul data-role="listview" data-filter="true" data-filter-placeholder="輸入關鍵字篩選動物... " data-inset="true">
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="yuanyang">鴛鴦</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="black-swan">黑天鵝</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="peacock">孔雀</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="green">綠鬣蜥</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="turtle">鱷龜</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="pongo">紅毛猩猩</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="malai">馬來猴</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="shanqiang">山羌</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="hipo">河馬</a></li>
+        <li><a href="#compareResult" class="js-compare-animal" data-animal="bear">馬來熊</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 比較結果 -->
+  <div data-role="page" id="compareResult" data-add-back-btn="true" data-back-btn-text="Back">
+    <div data-role="panel" id="panel" data-position="right" data-theme="a" data-display="push"></div>
+    <div data-role="header">
+      <a data-iconpos="notext" data-role="button" data-icon="home" title="Home" href="#index">Home</a>
+      <h1>比較結果</h1>
+      
+    </div>
+    <div data-role="content" role="main">
+      <table class="table">
+        <thead></thead>
+          <tr><th></th>         <th id="a-animal-name"></th>  <th id="b-animal-name"></th>    </tr>
+        <tbody>
+          <tr><td>體重</td>     <td id="a-animal-weight"></td>  <td id="b-animal-weight"></td>    </tr>
+          <tr><td>身長</td>     <td id="a-animal-height"></td>  <td id="b-animal-height"></td>   </tr>
+          <tr><td>棲息地</td>   <td id="a-animal-habitat"></td> <td id="b-animal-habitat"></td>   </tr>
+          <tr><td>原產地</td>   <td id="a-animal-origin"></td>  <td id="b-animal-origin"></td>   </tr>
+        </tbody>
+      </table>
+
+      <button onclick="window.history.back();" class="ui-btn ui-btn-c ui-corner-all">回到上一頁</button>
+
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
